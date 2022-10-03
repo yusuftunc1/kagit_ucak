@@ -1,0 +1,260 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+    
+    <div style="background-color: rgba(0,188,213,255);">
+        <!-- section main -->
+        <div class="container">
+            <div class="row">
+                <div class="col-9 mx-auto">
+                    <img class="mt-5 mb-5" src="static/image/logo/logokagit.png" alt="" width="100%">
+                </div>
+            </div>  
+            
+            <div class="row">
+                <div class="col-6">
+                    <img class="mt-5 mb-5 ml-5" src="/static/image/backgound/maviucak.png" alt="" width="50%">
+                </div>
+                <div class="col-6">
+                    <h4 class="text-uppercase fw-bold mt-5 mr-5 text-white">
+                        <i class="fa fa-map-marker fa-2x mr-2" aria-hidden="true" style="color: rgba(10,49,80,255);"></i>
+                        Elektrik Elektronik Çimleri 
+                    </h4>
+                
+                    <h4 class="text-uppercase fw-bold mt-5 mr-5 mb-5">
+                    <i class="fa fa-calendar-o fa-2x mr-2" aria-hidden="true" style="color: rgba(10,49,80,255);"></i>
+                        10-15 Ekim 2022 
+                    </h4>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- section top3-->
+        <div class="jumbotron" style="background-image: url(/static/image/backgound/4-IT.jpg);">
+            <div class="container">
+                <p class="text-white display-4 font-italic ">Yarışma Dereceleri </p>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 200px; background-color: #7c4dff; height: 2px"/>
+                <div class="row">
+                    
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 100%;"> 
+                        <div class="card-inner">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fa fa-paper-plane fa-2x" aria-hidden="true" style="color: gold;"></i>
+                                </div> 
+                                {% if user1 %}
+                                    {% for user in user1 %}
+                                        <div class="col-3"> <b>{{user.username}}</b>  </div>
+                                        <div class="col-2"> {{user.range}} (cm)</div>
+                                        <div class="col-2">  {{user.flighttime}} (s)</div>
+                                        <div class="col-3"> <b>{{user.score}} points</b> </div> 
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-4"> <b>username</b>  </div>
+                                    <div class="col-2"> mesafe (cm)</div>
+                                    <div class="col-2"> uçuş süresi (s)</div>
+                                    <div class="col-2"> <b>score</b> </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 100%;"> 
+                        <div class="card-inner">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fa fa-paper-plane fa-2x" aria-hidden="true" style="color: silver;"></i>
+                                </div>
+                                {% if user2 %}
+                                    {% for user in user2 %}
+                                        <div class="col-3"> <b>{{user.username}}</b>  </div>
+                                        <div class="col-2"> {{user.range}} (cm)</div>
+                                        <div class="col-2">  {{user.flighttime}} (s)</div>
+                                        <div class="col-3"> <b>{{user.score}} points</b> </div> 
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-3"> <b>username</b>  </div>
+                                    <div class="col-2"> mesafe (cm)</div>
+                                    <div class="col-2"> uçuş süresi (s)</div>
+                                    <div class="col-3"> <b>score</b> </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 100%;"> 
+                        <div class="card-inner">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fa fa-paper-plane fa-2x" aria-hidden="true" style="color: brown;"></i>
+                                </div> 
+                                {% if user3 %}
+                                    {% for user in user3 %}
+                                        <div class="col-3"> <b>{{user.username}}</b>  </div>
+                                        <div class="col-2"> {{user.range}} (cm)</div>
+                                        <div class="col-2">  {{user.flighttime}} (s)</div>
+                                        <div class="col-3"> <b>{{user.score}} points</b> </div> 
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-4"> <b>username</b>  </div>
+                                    <div class="col-2"> mesafe (cm)</div>
+                                    <div class="col-2"> uçuş süresi (s)</div>
+                                    <div class="col-2"> <b>score</b> </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section about competition-->
+        <div class="container mb-5">
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80">
+                        <h2 class="text-uppercase fw-bold mt-5 mr-5 text-white">Yarışma Konsepti</h2>
+                        <p class="lead my-3"> 
+                            <b>  
+                            Yarışma alanında yarışmacılarımızdan beklentimiz A4 kağıt ile
+                            herhangi bir yardımcı alet kullanmaksızın 3 dakika içinde hazırladıkları
+                            uçakları hazırlanan pist üzerinde yine kendileri fırlatmalıdır. Puanlama 
+                            sistemi alınan mesafe ve uçuş süresi üzerinden yapılacaktır.
+                            </b> 
+                        </p>
+                    </div>
+                    <div class="about-content-text mb-80">
+                        <h2 class="text-uppercase fw-bold mt-5 mr-5 text-white">Yarışmaya Nasıl Katılırım?</h2>
+                        <p class="lead my-3"> 
+                            <b>  
+                                Yarışma haftasında dilediğin zaman yarışma alanına gelip yarışmaya 
+                                katılabilirsin! 
+                                <a class="text-white" href="{% url 'register' %}"> kayıt olmak için tıkla</a>
+                            </b> 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card mt-3" style="width:100%">
+                        <img class="mx-auto d-block" width="100%" src="static/image/backgound/kuy-1.jpeg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- section search-->
+        <div class="jumbotron" style="background-image: url(/static/image/backgound/4-IT.jpg);">
+            <div class="container">
+                <p class="text-white display-4 font-italic ">Sıralamanızı Öğrenin </p>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 200px; background-color: #7c4dff; height: 2px"/>
+                <div class="card mb-4">
+                    
+                    <div class="card-body">
+                        <form action="{% url 'ranks' %}" method="POST">
+                            {% csrf_token %}
+                            
+                            <input type="text" name="username" class="form-control" placeholder="Kullanıcı Adı" required>
+                            <button type="submit" class="btn btn-info btn-block mt-3">Ara</button>
+                            
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- section about competition-->
+        <div class="container mb-5">
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-6">
+                    <div class="card mt-3" style="width:90%">
+                        <img class="mx-auto d-block" width="100%" src="static/image/backgound/planes.jpg" alt="">
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80">
+                        <h2 class="text-uppercase fw-bold mt-5 mr-5 text-white">Gösteri Uçuşu</h2>
+                        <p class="lead my-3"> 
+                            <b>  
+                                Etkinlik süresince sadece kağıt uçak yarışması gerçekleştirilmeyip aynı zamanda 
+                                topluluk bünyesinde üretilmiş araçlarla gerçekleştirilecek gösteri uçuşları da 
+                                yapılacaktır.
+                            </b> 
+                        </p>
+                    </div>
+                    <div class="about-content-text mb-5">
+                        <h2 class="text-uppercase fw-bold mt-5 mr-5 text-white">Ödüller</h2>
+                        <p class="lead my-3"> 
+                            <b>  
+                                Etkinliğin son gününde derece yapan yarışmacılarımıza ödülleri takdim edilecek ve 
+                                hatıra fotoğrafları çekilecektir.
+                            </b> 
+                        </p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+
+        <!-- section sponsor-->
+        <div class="jumbotron" style="background-image: url(/static/image/backgound/4-IT.jpg);">
+            <div class="container">
+                <p class="text-white display-4 font-italic ">SPONSORLARIMIZ </p>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 200px; background-color: #7c4dff; height: 2px"/>
+                            
+                <div class="row">
+                    <div class="col-6">
+                        <img src="/static/image/logo/yayla.png" alt="" width="100%;">
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <img class="mx-auto" src="/static/image/logo/uavlogowhite.png" alt="" width="80%;">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- about uav-->
+        <div class="container" style="padding-bottom:5%;">
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80">
+                        <h2 class="text-uppercase fw-bold mt-5 mr-5 text-white">BİZ KİMİZ?</h2>
+                        
+                        <p class="lead my-3">
+                            <b>   
+                            HUUAV Topluluğumuz, 2015 yılında Elektrik-Elektronik Mühendisliği bölümü bünyesinde çalışmalara başlamıştır. 
+                            <br>
+                            Temel hedefimiz, öğrencilik hayatımız devam ederken mühendislik hayatına hazırlanmak ve sahip olduğumuz teorik bilgiyi pratiğe dönüştürmektir. 
+                            <br>
+                            Kurulduğumuzdan beri her sene bu hedefe; önemli firmalara geziler düzenleyerek, alanında başarılı insanları seminerlerimize davet ederek, kapsamlı eğitimler vererek, ulusal ve uluslararası yarışmalara katılarak ve kendi ARGE projelerimizi yaparak ulaşmaktayız.
+                            </b>     
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img class="mx-auto d-block" width="80%" src="/static/image/logo/uavlogo.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    
+
+
+{% endblock %}

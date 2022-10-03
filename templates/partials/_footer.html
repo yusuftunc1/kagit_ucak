@@ -1,0 +1,101 @@
+<footer
+    class="text-center text-lg-start text-white"
+    style="background-color: #0a3150;"
+    >
+    
+    <section
+        class="d-flex justify-content-between p-4 text-white"
+        style="background-color: #0a3150"
+        >
+    </section>
+
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start ">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Unmanned Aerıal Vehicles </h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Hacettepe Üniversitesi İnsansız Hava Araçları Topluluğu
+            </p>
+            
+            {% if 'siralama' in request.path %}
+            <a href="{% url 'mainpage' %}" class="me-4 text-white">
+              <i class="fa fa-home" aria-hidden="true"> Ana Sayfa</i>
+            </a>
+            <br>  
+            <a href="{% url 'register' %}" class="me-4 text-white">
+              <i class="fa fa-user" aria-hidden="true"> Yarışmaya Katıl</i>
+            </a>
+            {% elif 'user/register' in request.path %}
+            <a href="{% url 'mainpage' %}" class="me-4 text-white">
+              <i class="fa fa-home" aria-hidden="true"> Ana Sayfa</i>
+            </a>
+            {%else%}
+            <a href="{% url 'register' %}" class="me-4 text-white">
+              <i class="fa fa-user" aria-hidden="true"> Yarışmaya Katıl</i>
+            </a>
+            {%endif%}
+          </div>
+
+          <!-- Social media -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Sosyal Medya</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+            />
+                <p>
+                <a href="https://twitter.com/iha_hacettepe" class="me-4 text-white">
+                    <i class="fab fa-twitter"> Twitter</i>
+                </a>
+                </p>
+                <p>
+                <a href="https://www.instagram.com/iha.hacettepe/" class="me-4 text-white">
+                    <i class="fab fa-instagram"> Instagram</i>
+                </a>
+                </p>
+                <p>
+                <a href="https://www.linkedin.com/company/hu-uavsociety/mycompany/" class="me-4 text-white">
+                    <i class="fab fa-linkedin"> Linkedin</i>
+                </a>
+                </p>
+                <p>
+                <a href="https://www.youtube.com/channel/UCCtihYxsybwWdEu4TdwLtOg" class="me-4 text-white">
+                    <i class="fa fa-youtube-play"> Youtube</i>
+                </a>
+                </p>
+          </div>
+
+          <!-- Contact column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold">İLETİŞİM</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> Elektrik Elektronik Mühendisliği, Beytepe Kampüsü</p>
+            <a href="mailto:uav.society@hacettepe.edu.tr" class="text-white" >
+              <i class="fas fa-envelope mr-3"></i> 
+              uav.society@hacettepe.edu.tr
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div
+        class="text-center p-3 "
+        style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+      © 2022 Copyright:
+      Hacettepe Üniversitesi İnsansız Hava Araçları Topluluğu - Tüm Hakları Saklıdır.
+      
+    </div>
+</footer>
